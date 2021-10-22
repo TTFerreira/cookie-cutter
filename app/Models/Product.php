@@ -13,4 +13,9 @@ class Product extends Model
     {
         return $this->belongsTo(ProductType::class);
     }
+
+    public function orderLine()
+    {
+        return $this->belongsToMany(OrderLine::class);
+    }
 }
