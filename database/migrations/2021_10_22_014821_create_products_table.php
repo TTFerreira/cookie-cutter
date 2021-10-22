@@ -18,8 +18,10 @@ class CreateProductsTable extends Migration
             $table->timestamps();
             $table->string('product_name')->unique();
             $table->unsignedBigInteger('product_type_id');
+            $table->unsignedBigInteger('product_range_id');
 
             $table->foreign('product_type_id')->references('id')->on('product_types');
+            $table->foreign('product_range_id')->references('id')->on('product_ranges');
         });
     }
 
